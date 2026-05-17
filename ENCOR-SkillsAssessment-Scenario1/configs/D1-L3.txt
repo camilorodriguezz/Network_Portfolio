@@ -1,0 +1,442 @@
+Building configuration...
+Current configuration : 11584 bytes
+!
+! Last configuration change at 12:40:43 UTC Thu Jan 15 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname D1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+logging buffered 16384
+enable secret 5 $1$Fr0c$RhOnzOS.Dn0FhfpZrjIUy.
+!
+username sadmin privilege 15 secret 9 $9$88/DF.
+L8BwM50f$xJ9StBfRjKgFJvqzP8fz9FZtBoyMoBhc6jbDvo.zN.2
+aaa new-model
+!
+!
+aaa group server radius RADIUS-GROUP
+server name RADIUS
+!
+aaa authentication login default group RADIUS-GROUP local
+!
+!
+!
+!
+!
+!
+aaa session-id common
+clock timezone UTC -5 0
+!
+!
+!
+!
+!
+!
+ip dhcp excluded-address 10.0.101.1 10.0.101.109
+ip dhcp excluded-address 10.0.101.141 10.0.101.254
+ip dhcp excluded-address 10.0.102.1 10.0.102.109
+ip dhcp excluded-address 10.0.102.141 10.0.102.254
+!
+ip dhcp pool VLAN-101
+network 10.0.101.0 255.255.255.0
+default-router 10.0.101.254
+!
+ip dhcp pool VLAN-102
+network 10.0.102.0 255.255.255.0
+default-router 10.0.102.254
+!
+!
+no ip domain-lookup
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+spanning-tree vlan 100,102 priority 24576
+spanning-tree vlan 101 priority 28672
+!
+!
+track 4 ip sla 4
+delay down 15 up 10
+!
+track 6 ip sla 6
+delay down 15 up 10
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+switchport trunk allowed vlan 100-102,999
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 999
+switchport mode trunk
+switchport nonegotiate
+ip flow ingress
+ip flow egress
+!
+interface Port-channel12
+switchport trunk allowed vlan 100-102,999
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 999
+switchport mode trunk
+switchport nonegotiate
+ip flow ingress
+ip flow egress
+!
+interface GigabitEthernet0/0
+switchport trunk allowed vlan 100-102,999
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 999
+switchport mode trunk
+switchport nonegotiate
+no negotiation auto
+channel-group 12 mode active
+!
+interface GigabitEthernet0/1
+switchport trunk allowed vlan 100-102,999
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 999
+switchport mode trunk
+switchport nonegotiate
+no negotiation auto
+channel-group 12 mode active
+!
+interface GigabitEthernet0/2
+switchport trunk allowed vlan 100-102,999
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 999
+switchport mode trunk
+switchport nonegotiate
+no negotiation auto
+channel-group 12 mode active
+!
+interface GigabitEthernet0/3
+switchport trunk allowed vlan 100-102,999
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 999
+switchport mode trunk
+switchport nonegotiate
+no negotiation auto
+channel-group 12 mode active
+!
+interface GigabitEthernet1/0
+switchport trunk allowed vlan 100-102,999
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 999
+switchport mode trunk
+switchport nonegotiate
+no negotiation auto
+channel-group 1 mode active
+!
+interface GigabitEthernet1/1
+switchport trunk allowed vlan 100-102,999
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 999
+switchport mode trunk
+switchport nonegotiate
+no negotiation auto
+channel-group 1 mode active
+!
+interface GigabitEthernet1/2
+shutdown
+no negotiation auto
+!
+interface GigabitEthernet1/3
+shutdown
+no negotiation auto
+!
+interface GigabitEthernet2/0
+no switchport
+ip flow ingress
+ip flow egress
+ip address 10.0.10.2 255.255.255.0
+no negotiation auto
+ipv6 address FE80::D1:1 link-local
+ipv6 address 2001:DB8:100:1010::2/64
+ipv6 ospf 6 area 0
+!
+interface GigabitEthernet2/1
+shutdown
+no negotiation auto
+!
+interface GigabitEthernet2/2
+shutdown
+no negotiation auto
+!
+interface GigabitEthernet2/3
+shutdown
+no negotiation auto
+!
+interface GigabitEthernet3/0
+shutdown
+no negotiation auto
+!
+interface GigabitEthernet3/1
+shutdown
+no negotiation auto
+!
+interface GigabitEthernet3/2
+shutdown
+no negotiation auto
+!
+interface GigabitEthernet3/3
+switchport access vlan 100
+switchport mode access
+no negotiation auto
+spanning-tree portfast edge
+!
+interface Vlan100
+ip address 10.0.100.1 255.255.255.0
+standby version 2
+standby 104 ip 10.0.100.254
+standby 104 priority 150
+standby 104 preempt
+standby 104 track 4 decrement 60
+standby 106 ipv6 autoconfig
+standby 106 priority 150
+standby 106 preempt
+standby 106 track 6 decrement 60
+ipv6 address FE80::D1:2 link-local
+ipv6 address 2001:DB8:100:100::1/64
+ipv6 ospf 6 area 0
+!
+interface Vlan101
+ip address 10.0.101.1 255.255.255.0
+standby version 2
+standby 114 ip 10.0.101.254
+standby 114 preempt
+standby 114 track 4 decrement 60
+standby 116 ipv6 autoconfig
+standby 116 preempt
+standby 116 track 6 decrement 60
+ipv6 address FE80::D1:3 link-local
+ipv6 address 2001:DB8:100:101::1/64
+ipv6 ospf 6 area 0
+!
+interface Vlan102
+ip address 10.0.102.1 255.255.255.0
+standby version 2
+standby 124 ip 10.0.102.254
+standby 124 priority 150
+standby 124 preempt
+standby 124 track 4 decrement 60
+standby 126 ipv6 autoconfig
+standby 126 priority 150
+standby 126 preempt
+standby 126 track 6 decrement 60
+ipv6 address FE80::D1:4 link-local
+ipv6 address 2001:DB8:100:102::1/64
+ipv6 ospf 6 area 0
+!
+router ospf 4
+router-id 0.0.4.131
+passive-interface default
+no passive-interface GigabitEthernet2/0
+network 10.0.10.0 0.0.0.255 area 0
+network 10.0.100.0 0.0.0.255 area 0
+network 10.0.101.0 0.0.0.255 area 0
+network 10.0.102.0 0.0.0.255 area 0
+!
+ip forward-protocol nd
+!
+ip http server
+ip http secure-server
+ip flow-export source GigabitEthernet3/3
+ip flow-export version 9
+ip flow-export destination 10.0.100.5 2055
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr
+aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr
+aes256-ctr
+!
+ip access-list standard SNMP-PC1
+permit 10.0.100.5
+!
+!
+ip sla 4
+icmp-echo 10.0.10.1
+frequency 5
+ip sla schedule 4 life forever start-time now
+ip sla 6
+icmp-echo 2001:DB8:100:1010::1
+frequency 5
+ip sla schedule 6 life forever start-time now
+logging trap warnings
+logging host 10.0.100.5
+logging host 10.0.100.5 transport tcp port 50514
+ipv6 router ospf 6
+router-id 0.0.6.131
+passive-interface default
+no passive-interface GigabitEthernet2/0
+!
+!
+!
+!
+snmp-server community ENCORSA RO SNMP-PC1
+snmp-server location GNS3-LAB
+snmp-server contact Camilo Andres Gutierrez
+snmp-server enable traps snmp authentication linkdown linkup
+coldstart warmstart
+snmp-server enable traps flowmon
+snmp-server enable traps tty
+snmp-server enable traps eigrp
+snmp-server enable traps casa
+snmp-server enable traps ospf state-change
+snmp-server enable traps ospf errors
+snmp-server enable traps ospf retransmit
+snmp-server enable traps ospf lsa
+snmp-server enable traps ospf cisco-specific state-change
+nssa-trans-change
+snmp-server enable traps ospf cisco-specific state-change
+shamlink interface
+snmp-server enable traps ospf cisco-specific state-change
+shamlink neighbor
+snmp-server enable traps ospf cisco-specific errors
+snmp-server enable traps ospf cisco-specific retransmit
+snmp-server enable traps ospf cisco-specific lsa
+snmp-server enable traps ethernet cfm cc mep-up mep-down
+cross-connect loop config
+snmp-server enable traps ethernet cfm crosscheck mep-missing
+mep-unknown service-up
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps energywise
+snmp-server enable traps pw vc
+snmp-server enable traps l2tun session
+snmp-server enable traps l2tun pseudowire status
+snmp-server enable traps ether-oam
+snmp-server enable traps lisp
+snmp-server enable traps mpls rfc ldp
+snmp-server enable traps mpls ldp
+snmp-server enable traps mpls rfc traffic-eng
+snmp-server enable traps mpls traffic-eng
+snmp-server enable traps ethernet evc status create delete
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency rootinconsistency
+loop-inconsistency
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps ike policy add
+snmp-server enable traps ike policy delete
+snmp-server enable traps ike tunnel start
+snmp-server enable traps ike tunnel stop
+snmp-server enable traps ipsec cryptomap add
+snmp-server enable traps ipsec cryptomap delete
+snmp-server enable traps ipsec cryptomap attach
+snmp-server enable traps ipsec cryptomap detach
+snmp-server enable traps ipsec tunnel start
+snmp-server enable traps ipsec tunnel stop
+snmp-server enable traps ipsec too-many-sas
+snmp-server enable traps bfd
+snmp-server enable traps bgp cbgp2
+snmp-server enable traps cef resource-failure peer-statechange
+peer-fib-state-change inconsistency
+snmp-server enable traps dlsw
+snmp-server enable traps frame-relay
+snmp-server enable traps frame-relay subif
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps isis
+snmp-server enable traps msdp
+snmp-server enable traps mvpn
+snmp-server enable traps pim neighbor-change rp-mappingchange
+invalid-pim-message
+snmp-server enable traps rsvp
+snmp-server enable traps ipsla
+snmp-server enable traps slb real virtual csrp
+snmp-server enable traps syslog
+snmp-server enable traps event-manager
+snmp-server enable traps pki
+snmp-server enable traps ospfv3 state-change
+snmp-server enable traps ospfv3 errors
+snmp-server enable traps ethernet cfm alarm
+snmp-server enable traps mpls vpn
+snmp-server enable traps vrfmib vrf-up vrf-down vnet-trunkup
+vnet-trunk-down
+snmp-server host 10.0.100.5 version 2c ENCORSA
+snmp ifmib ifindex persist
+!
+!
+radius server RADIUS
+address ipv4 10.0.100.6 auth-port 1812 acct-port 1813
+key $trongPass
+!
+!
+control-plane
+!
+banner exec ˆC
+IOSv - Cisco Systems Confidential -
+Supplemental End User License Restrictions
+This IOSv software is provided AS-IS without warranty of any
+kind. Under no circumstances may this software be used
+separate from the Cisco Modeling Labs Software that
+this software was provided with, or deployed or used as
+part of a production environment.
+By using the software, you agree to abide by the terms and
+conditions of the Cisco End User License Agreement at
+http://www.cisco.com/go/eula. Unauthorized use or
+distribution of this software is expressly prohibited.
+ˆC
+banner incoming ˆC
+IOSv - Cisco Systems Confidential -
+Supplemental End User License Restrictions
+This IOSv software is provided AS-IS without warranty of any
+kind. Under no circumstances may this software be used
+separate from the Cisco Modeling Labs Software that
+this software was provided with, or deployed or used as
+part of a production environment.
+By using the software, you agree to abide by the terms and
+conditions of the Cisco End User License Agreement at
+http://www.cisco.com/go/eula. Unauthorized use or
+distribution of this software is expressly prohibited.
+ˆC
+banner login ˆC
+IOSv - Cisco Systems Confidential -
+Supplemental End User License Restrictions
+This IOSv software is provided AS-IS without warranty of any
+kind. Under no circumstances may this software be used
+separate from the Cisco Modeling Labs Software that
+this software was provided with, or deployed or used as
+part of a production environment.
+By using the software, you agree to abide by the terms and
+conditions of the Cisco End User License Agreement at
+http://www.cisco.com/go/eula. Unauthorized use or
+distribution of this software is expressly prohibited.
+ˆC
+banner motd ˆC D1, ENCOR Skills Assessment, Scenario 1 ˆC
+!
+line con 0
+exec-timeout 0 0
+logging synchronous
+line aux 0
+line vty 0 4
+transport input ssh
+line vty 5 15
+transport input ssh
+!
+ntp server 10.0.10.1
+!
+end
