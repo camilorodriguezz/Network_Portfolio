@@ -11,10 +11,10 @@ salto y monitoreo centralizado. Proyecto individual.
 OSPF v2/v3 · MP-BGP · HSRPv2 (IPv4/IPv6) · RADIUS AAA · 
 Syslog · SNMPv2c · NetFlow v9 · LACP · RSTP · Dual-Stack
 
-## Topología
-### Planteada
+## Topologías
+### Topología Planteada
 ![planned](topology/planned.png)
-### Implementada
+### Topología Implementada
 ![implemented](topology/implemented.png)
 
 ## Documentación completa
