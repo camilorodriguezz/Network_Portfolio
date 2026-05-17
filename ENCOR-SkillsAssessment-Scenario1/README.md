@@ -1,6 +1,6 @@
 # 01 - Enterprise Network | ENCOR Scenario 1
 
-**Autor:** Camilo Andrés Gutiérrez | Politécnico Grancolombiano
+**Autor:** Camilo Andrés Gutiérrez Rodríguez | Politécnico Grancolombiano
 **Herramienta:** GNS3 | Cisco IOSv 15.5, IOSvL2
 
 ## Descripción
