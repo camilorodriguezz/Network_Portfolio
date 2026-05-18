@@ -1,0 +1,208 @@
+Building configuration...
+Current configuration : 4067 bytes
+!
+! Last configuration change at 19:14:15 UTC Mon Dec 29 2025
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname D2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$hAIk$RQMULQ4kvbx0SnPzV8yyT/
+!
+username admin privilege 15 secret 9
+$9$10P1RWu1MkNrh9$ClEomklxjIh/3VnYE4Lk5btr1060qO.y.iZ.
+zK/tOJQ
+aaa new-model
+!
+!
+aaa authentication login default local
+!
+!
+!
+!
+!
+!
+aaa session-id common
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+shutdown
+negotiation auto
+!
+interface GigabitEthernet0/1
+shutdown
+negotiation auto
+!
+interface GigabitEthernet0/2
+shutdown
+negotiation auto
+!
+interface GigabitEthernet0/3
+shutdown
+negotiation auto
+!
+interface GigabitEthernet1/0
+shutdown
+negotiation auto
+!
+interface GigabitEthernet1/1
+shutdown
+negotiation auto
+!
+interface GigabitEthernet1/2
+shutdown
+negotiation auto
+!
+interface GigabitEthernet1/3
+shutdown
+negotiation auto
+!
+interface GigabitEthernet2/0
+switchport trunk allowed vlan 8,13,99
+switchport trunk encapsulation dot1q
+switchport trunk native vlan 99
+switchport mode trunk
+switchport nonegotiate
+negotiation auto
+!
+interface GigabitEthernet2/1
+shutdown
+negotiation auto
+!
+interface GigabitEthernet2/2
+shutdown
+negotiation auto
+!
+interface GigabitEthernet2/3
+shutdown
+negotiation auto
+!
+interface GigabitEthernet3/0
+shutdown
+negotiation auto
+!
+interface GigabitEthernet3/1
+shutdown
+negotiation auto
+!
+interface GigabitEthernet3/2
+switchport access vlan 8
+switchport mode access
+negotiation auto
+spanning-tree portfast edge
+!
+interface GigabitEthernet3/3
+switchport access vlan 13
+switchport mode access
+negotiation auto
+spanning-tree portfast edge
+!
+ip forward-protocol nd
+!
+ip http server
+ip http secure-server
+!
+ip ssh server algorithm encryption aes128-ctr aes192-ctr
+aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr
+aes256-ctr
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner exec ˆC
+IOSv - Cisco Systems Confidential -
+Supplemental End User License Restrictions
+This IOSv software is provided AS-IS without warranty of any
+kind. Under no circumstances may this software be used
+separate from the Cisco Modeling Labs Software that
+this software was provided with, or deployed or used as
+part of a production environment.
+By using the software, you agree to abide by the terms and
+conditions of the Cisco End User License Agreement at
+http://www.cisco.com/go/eula. Unauthorized use or
+distribution of this software is expressly prohibited.
+ˆC
+banner incoming ˆC
+IOSv - Cisco Systems Confidential -
+Supplemental End User License Restrictions
+This IOSv software is provided AS-IS without warranty of any
+kind. Under no circumstances may this software be used
+separate from the Cisco Modeling Labs Software that
+this software was provided with, or deployed or used as
+part of a production environment.
+By using the software, you agree to abide by the terms and
+conditions of the Cisco End User License Agreement at
+http://www.cisco.com/go/eula. Unauthorized use or
+distribution of this software is expressly prohibited.
+ˆC
+banner login ˆC
+IOSv - Cisco Systems Confidential -
+Supplemental End User License Restrictions
+This IOSv software is provided AS-IS without warranty of any
+kind. Under no circumstances may this software be used
+separate from the Cisco Modeling Labs Software that
+this software was provided with, or deployed or used as
+part of a production environment.
+By using the software, you agree to abide by the terms and
+conditions of the Cisco End User License Agreement at
+http://www.cisco.com/go/eula. Unauthorized use or
+distribution of this software is expressly prohibited.
+ˆC
+banner motd ˆC D2, ENCOR Skills Assessment, Scenario 2 ˆC
+!
+line con 0
+exec-timeout 0 0
+logging synchronous
+line aux 0
+line vty 0 4
+transport input ssh
+line vty 5 15
+transport input ssh
+!
+!
+end

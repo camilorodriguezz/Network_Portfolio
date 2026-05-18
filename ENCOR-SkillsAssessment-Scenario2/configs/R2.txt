@@ -1,0 +1,268 @@
+Building configuration...
+Current configuration : 5534 bytes
+!
+version 15.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition General-Users
+!
+address-family ipv4
+exit-address-family
+!
+address-family ipv6
+exit-address-family
+!
+vrf definition Special-Users
+!
+address-family ipv4
+exit-address-family
+!
+address-family ipv6
+exit-address-family
+!
+enable secret 9 $9$1C9D3SJ94AHnu9$0zNC7h9IVRH5caI/RZjNh6gg.4
+BVodT20hMBzIy.JyI
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+!
+!
+!
+!
+!
+aaa session-id common
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+username admin privilege 15 secret 9
+$9$TiCsIF2kRRgmWP$sAwJ8wSXjmfj7cmHBGuB0htWQMkuhkQ3GfSVKGzYoFI
+!
+redundancy
+!
+no cdp log mismatch duplex
+!
+ip tcp synwait-time 5
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+no ip address
+duplex auto
+speed auto
+media-type rj45
+!
+interface GigabitEthernet0/0.1
+encapsulation dot1Q 13
+vrf forwarding Special-Users
+ip address 10.0.12.2 255.255.255.0
+ipv6 address FE80::2:1 link-local
+ipv6 address 2001:DB8:ACAD:12::2/64
+!
+interface GigabitEthernet0/0.2
+encapsulation dot1Q 8
+vrf forwarding General-Users
+ip address 10.0.12.2 255.255.255.0
+ipv6 address FE80::2:2 link-local
+ipv6 address 2001:DB8:ACAD:12::2/64
+!
+interface GigabitEthernet0/1
+no ip address
+duplex auto
+speed auto
+media-type rj45
+!
+interface GigabitEthernet0/1.1
+encapsulation dot1Q 13
+vrf forwarding Special-Users
+ip address 10.0.23.2 255.255.255.0
+ipv6 address FE80::2:3 link-local
+ipv6 address 2001:DB8:ACAD:23::2/64
+!
+interface GigabitEthernet0/1.2
+encapsulation dot1Q 8
+vrf forwarding General-Users
+ip address 10.0.23.2 255.255.255.0
+ipv6 address FE80::2:4 link-local
+ipv6 address 2001:DB8:ACAD:23::2/64
+!
+interface GigabitEthernet0/2
+no ip address
+shutdown
+duplex auto
+speed auto
+media-type rj45
+!
+interface GigabitEthernet0/3
+no ip address
+shutdown
+duplex auto
+speed auto
+media-type rj45
+!
+interface GigabitEthernet0/4
+no ip address
+shutdown
+duplex auto
+speed auto
+media-type rj45
+!
+interface GigabitEthernet0/5
+no ip address
+shutdown
+duplex auto
+speed auto
+media-type rj45
+!
+interface GigabitEthernet0/6
+no ip address
+shutdown
+duplex auto
+speed auto
+media-type rj45
+!
+interface GigabitEthernet0/7
+no ip address
+shutdown
+duplex auto
+speed auto
+media-type rj45
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route vrf General-Users 10.0.108.0 255.255.255.0
+GigabitEthernet0/0.2 10.0.12.1
+ip route vrf General-Users 10.0.208.0 255.255.255.0
+GigabitEthernet0/1.2 10.0.23.3
+ip route vrf Special-Users 10.0.113.0 255.255.255.0
+GigabitEthernet0/0.1 10.0.12.1
+ip route vrf Special-Users 10.0.213.0 255.255.255.0
+GigabitEthernet0/1.1 10.0.23.3
+!
+ipv6 route vrf General-Users 2001:DB8:ACAD:108::/64
+GigabitEthernet0/0.2 2001:DB8:ACAD:12::1
+ipv6 route vrf Special-Users 2001:DB8:ACAD:113::/64
+GigabitEthernet0/0.1 2001:DB8:ACAD:12::1
+ipv6 route vrf General-Users 2001:DB8:ACAD:208::/64
+GigabitEthernet0/1.2 2001:DB8:ACAD:23::3
+ipv6 route vrf Special-Users 2001:DB8:ACAD:213::/64
+GigabitEthernet0/1.1 2001:DB8:ACAD:23::3
+ipv6 ioam timestamp
+!
+!
+!
+!
+!
+control-plane
+!
+banner exec ˆC
+*********************************************************
+* IOSv is strictly limited to use for evaluation,
+demonstration and IOS *
+* education. IOSv is provided as-is and is not supported by
+Cisco’s *
+* Technical Advisory Center. Any use or disclosure, in whole
+or in part, *
+* of the IOSv Software or Documentation to any third party
+for any *
+* purposes is expressly prohibited except as otherwise
+authorized by *
+* Cisco in writing.
+*
+*********************************************************ˆC
+banner incoming ˆC
+*********************************************************
+* IOSv is strictly limited to use for evaluation,
+demonstration and IOS *
+* education. IOSv is provided as-is and is not supported by
+Cisco’s *
+* Technical Advisory Center. Any use or disclosure, in whole
+or in part, *
+* of the IOSv Software or Documentation to any third party
+for any *
+* purposes is expressly prohibited except as otherwise
+authorized by *
+* Cisco in writing.
+*
+*********************************************************ˆC
+banner login ˆC
+*********************************************************
+* IOSv is strictly limited to use for evaluation,
+demonstration and IOS *
+* education. IOSv is provided as-is and is not supported by
+Cisco’s *
+* Technical Advisory Center. Any use or disclosure, in whole
+or in part, *
+* of the IOSv Software or Documentation to any third party
+for any *
+* purposes is expressly prohibited except as otherwise
+authorized by *
+* Cisco in writing.
+*
+*********************************************************ˆC
+banner motd ˆC R2, ENCOR Skills Assessment, Scenario 2 ˆC
+!
+line con 0
+exec-timeout 0 0
+privilege level 15
+logging synchronous
+line aux 0
+exec-timeout 0 0
+privilege level 15
+logging synchronous
+line vty 0 4
+transport input ssh
+line vty 5 15
+transport input ssh
+!
+no scheduler allocate
+!
+end
