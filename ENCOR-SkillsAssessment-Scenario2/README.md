@@ -20,7 +20,7 @@ RSTP · Rutas estáticas · Dual-Stack IPv4/IPv6 · AAA
 ![implemented](topology/implemented.png)
 
 ## Documentación completa
-[Ver PDF](docs/PROYECTO_DIPLOMADO_2.pdf)
+[Ver PDF](docs/ENCOR-SkillsAssessment-Scenario2.pdf)
 
 ## Configuraciones
 [Ver configs](configs/)
