@@ -22,7 +22,7 @@ Balanceo Activo-Activo
 - **BGP AS:** 65500 | Timers: keepalive 10s / holdtime 30s
 
 ## Topología
-![topology](topology/SD-WAN_topology.png)
+![topology](topology/SD-WAN_Topology.png)
 
 ## Escenarios Validados
 - ✅ Balanceo activo-activo entre overlays INET y MPLS
