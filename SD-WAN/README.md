@@ -25,11 +25,11 @@ Balanceo Activo-Activo
 ![topology](topology/SD-WAN_Topology.png)
 
 ## Escenarios Validados
-- ✅ Balanceo activo-activo entre overlays INET y MPLS
-- ✅ Failover DIA → RIA ante caída de port1
-- ✅ Shortcuts ADVPN directos entre Branches
-- ✅ Convergencia sub-segundo ante fallos de enlace
-- ✅ Conectividad LAN a LAN entre las tres sedes
+- Balanceo activo-activo entre overlays INET y MPLS
+- Failover DIA → RIA ante caída de port1
+- Shortcuts ADVPN directos entre Branches
+- Convergencia sub-segundo ante fallos de enlace
+- Conectividad LAN a LAN entre las tres sedes
 
 ## Documentación completa
-📄 [Ver PDF](docs/SD_WAN.pdf)
+[Ver PDF](docs/SD_WAN.pdf)
