@@ -69,4 +69,4 @@ También documento algunos de estos proyectos en formato video, explicando confi
 | Proyecto | Descripción | Tecnologías previstas | Estado |
 |---|---|---|---|
 | Ethical Hacking - Reconocimiento | Recon pasivo y activo (OSINT, escaneo de puertos/servicios) | Nmap, metaspolit, Shodan | 🔲 Realizado - Pendiente Documentar |
-| Monitoreo de Red | Extensión del proyecto anterior con herramientas de monitoreo continuo | Zabbix | 🔲 Realizado - Pendiente Documentar |
+| Monitoreo de Red | Extensión del proyecto "ENCOR-SkillsAssessment-Scenario1" con herramientas de monitoreo continuo | Zabbix | 🔲 Realizado - Pendiente Documentar |
