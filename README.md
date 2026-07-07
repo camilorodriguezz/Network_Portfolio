@@ -36,6 +36,12 @@ infraestructura empresarial, seguridad, automatización y comunicaciones.
 |----|--------------------|----------------------|----------------|
 | 10 | Network Automation | Python, Netmiko, SSH | Automatización |
 
+## 🎥 Canal de YouTube
+
+También documento algunos de estos proyectos en formato video, explicando configuraciones paso a paso de Windows Server, Linux e Issabel:
+
+📺 [CAMILO ANDRES GUTIERREZ RODRIGUEZ](https://www.youtube.com/@camiloandresgutierrezrodri2405)
+
 ## Herramientas y Tecnologías
 
 **Simulación y Virtualización**
