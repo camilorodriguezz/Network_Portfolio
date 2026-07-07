@@ -38,7 +38,7 @@ infraestructura empresarial, seguridad, automatización y comunicaciones.
 
 ## 🎥 Canal de YouTube
 
-También documento algunos de estos proyectos en formato video, explicando configuraciones paso a paso de Windows Server, Linux e Issabel:
+También documento algunos de estos proyectos en formato video, explicando configuraciones paso a paso de Windows Server, Linux, Issabel, arquitecturas de red y herramientas de monitorización:
 
 📺 [CAMILO ANDRES GUTIERREZ RODRIGUEZ](https://www.youtube.com/@camiloandresgutierrezrodri2405)
 
