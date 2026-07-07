@@ -56,3 +56,11 @@ infraestructura empresarial, seguridad, automatización y comunicaciones.
 **Servidores**
 - Windows Server, Linux (Ubuntu/CentOS)
 - MariaDB, Asterisk/Issabel
+
+
+## 🚧 Próximos Proyectos
+
+| Proyecto | Descripción | Tecnologías previstas | Estado |
+|---|---|---|---|
+| Ethical Hacking - Reconocimiento | Recon pasivo y activo (OSINT, escaneo de puertos/servicios) | Nmap, theHarvester, Shodan, Maltego | 🔲 Por iniciar |
+| Monitoreo de Red | Extensión del proyecto anterior con herramientas de monitoreo continuo | Zabbix | 🔲 Por iniciar |
