@@ -62,5 +62,5 @@ infraestructura empresarial, seguridad, automatización y comunicaciones.
 
 | Proyecto | Descripción | Tecnologías previstas | Estado |
 |---|---|---|---|
-| Ethical Hacking - Reconocimiento | Recon pasivo y activo (OSINT, escaneo de puertos/servicios) | Nmap, theHarvester, Shodan, Maltego | 🔲 Por iniciar |
-| Monitoreo de Red | Extensión del proyecto anterior con herramientas de monitoreo continuo | Zabbix | 🔲 Por iniciar |
+| Ethical Hacking - Reconocimiento | Recon pasivo y activo (OSINT, escaneo de puertos/servicios) | Nmap, metaspolit, Shodan | 🔲 Realizado - Pendiente Documentar |
+| Monitoreo de Red | Extensión del proyecto anterior con herramientas de monitoreo continuo | Zabbix | 🔲 Realizado - Pendiente Documentar |
