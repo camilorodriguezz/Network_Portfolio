@@ -10,9 +10,9 @@ Laboratorios de Ethical Hacking realizados en entornos físicos controlados con 
 ### Reconocimiento
 |  # |           Proyecto           |            Tecnologías             |        Área        |
 |----|------------------------------|------------------------------------|--------------------|
-| 01 | Reconocimiento pasivo (Lab)  | OSINT, fuentes abiertas            | Recon pasivo       |
-| 02 | Reconocimiento pasivo (Entidad pública) | OSINT, fuentes abiertas | Recon pasivo       |
-| 03 | Reconocimiento activo (Lab)  | Kali Linux, Nmap, Cisco, FortiGate | Recon activo       |
+| 01 | Reconocimiento pasivo (Lab)  | OSINT, fuentes abiertas            | Reconocimiento pasivo       |
+| 02 | Reconocimiento pasivo (Entidad pública) | OSINT, fuentes abiertas | Reconocimiento pasivo       |
+| 03 | Reconocimiento activo (Lab)  | Kali Linux, Nmap, Cisco, FortiGate | Reconocimiento activo       |
 
 ### Explotación
 |  # |         Proyecto          |        Tecnologías         |         Área         |
@@ -51,10 +51,10 @@ Laboratorios de Ethical Hacking realizados en entornos físicos controlados con 
 
 | Proyecto | Descripción | Estado |
 |---|---|---|
-| Reconocimiento pasivo | Laboratorio y entidad pública | 🔲 Realizado - Pendiente Documentar |
-| Reconocimiento activo | Escaneo y enumeración en laboratorio | 🔲 Realizado - Pendiente Documentar |
-| Explotación y cargue de archivos | Explotación en laboratorio | 🔲 Realizado - Pendiente Documentar |
-| Ataques de capa 2 | Doble etiquetado y salto de VLAN | 🔲 Realizado - Pendiente Documentar |
+| Reconocimiento pasivo | Laboratorio y entidad pública | Realizado - Pendiente Documentar |
+| Reconocimiento activo | Escaneo y enumeración en laboratorio | Realizado - Pendiente Documentar |
+| Explotación y cargue de archivos | Explotación en laboratorio | Realizado - Pendiente Documentar |
+| Ataques de capa 2 | Doble etiquetado y salto de VLAN | Realizado - Pendiente Documentar |
 
 ## Aviso
 
