@@ -1,7 +1,7 @@
-# Otros_Laboratorios — Ethical Hacking
+# Laboratorios Grupales — Ethical Hacking
 ### Camilo Andrés Gutiérrez | Ing. Telecomunicaciones
 
-Laboratorios de Ethical Hacking realizados en entornos físicos controlados con tecnologías **Cisco** y **Fortinet**, enfocados en reconocimiento, explotación y ataques de capa 2.
+Laboratorios grupales de Ethical Hacking realizados en entornos físicos controlados con tecnologías **Cisco** y **Fortinet**, enfocados en reconocimiento, explotación y ataques de capa 2.
 
 > **Estado:** laboratorios realizados, documentación en proceso.
 
