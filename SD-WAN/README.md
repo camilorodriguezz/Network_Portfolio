@@ -1,4 +1,4 @@
-# 05 - SD-WAN Hub-and-Spoke | FortiGate
+# 03 - SD-WAN Hub-and-Spoke | FortiGate
 
 **Autor:** Camilo Andrés Gutiérrez Rodríguez | Politécnico Grancolombiano  
 **Herramienta:** VMware | FortiGate VM  
