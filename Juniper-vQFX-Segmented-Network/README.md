@@ -29,7 +29,7 @@ Cisco IOS · Multi-vendor
 | 30 | IT | 192.168.30.0/24 |
 | 99 | NATIVE | — |
 
-## Topología
+## Topología Implementada
 ![topology](topology/topology.png)
 
 ## Resultados Validados
