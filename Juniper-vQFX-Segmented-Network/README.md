@@ -1,4 +1,4 @@
-# 06 - Segmented Network | Juniper vQFX + Cisco
+# 05 - Segmented Network | Juniper vQFX + Cisco
 
 **Autor:** Camilo Andrés Gutiérrez Rodríguez 
 **Herramienta:** GNS3 | Juniper vQFX · Cisco IOSv  
