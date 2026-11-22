@@ -32,12 +32,6 @@ Cisco IOS · Multi-vendor
 ## Topología Implementada
 ![topology](topology/topology.png)
 
-## Resultados Validados
-- Operación correcta de grupos LACP (PO1, PO2 y PO3)
-- SW-RE-1 elegido como root bridge, SW-RE-2 como secundario, validación de funcionamiento RSTP
-- CE-R-RE-4, Comunicación entre las tres VLANs vía Inter-VLAN Routing y configuración de ruta estática predeterminada
-- Salida a Internet a través del PE Cisco con NAT/PAT
-
 ## Documentación completa
 [Ver PDF](docs/Informe_RedJuniper.pdf)
 
