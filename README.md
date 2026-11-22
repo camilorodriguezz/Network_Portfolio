@@ -48,10 +48,10 @@ También documento algunos de estos proyectos en formato video, explicando confi
 - GNS3, VMware/VirtualBox
 
 **Dispositivos y Plataformas**
-- Cisco IOSv, IOSvL2, FortiGate VM, Kali Linux, Forticlient EMS
+- Cisco IOSv, IOSvL2, Juniper vQFX, FortiGate VM, Kali Linux, Forticlient EMS
 
-**Protocolos**
-- OSPF, BGP, MPLS, HSRP, VRF, SIP
+**Protocolos y tecnologías**
+- VLAN, RSTP, Agregación de Enlaces, Inter-Vlan Routing, enrutamiento estático y dinámico (OSPF, BGP), MPLS, HSRP, VRF, SIP
 
 **Seguridad**
 - FortiGate SD-WAN, ZTNA, Kaspersky, Kali Linux
@@ -69,4 +69,4 @@ También documento algunos de estos proyectos en formato video, explicando confi
 | Proyecto | Descripción | Tecnologías previstas | Estado |
 |---|---|---|---|
 | Ethical Hacking - Reconocimiento | Recon pasivo y activo (OSINT, escaneo de puertos/servicios) | Nmap, metaspolit, Shodan | 🔲 Realizado - Pendiente Documentar |
-| Monitoreo de Red | Extensión del proyecto "ENCOR-SkillsAssessment-Scenario1" con herramientas de monitoreo continuo | Zabbix | 🔲 Realizado - Pendiente Documentar |
+| Monitoreo de Red | Extensión del proyecto "ENCOR-SkillsAssessment-Scenario1" con herramientas de monitoreo continuo | Zabbix | 🔲 Sin realizar|
